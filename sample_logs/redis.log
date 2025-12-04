@@ -1,0 +1,9 @@
+{"timestamp":"2024-12-03T10:00:00Z","level":"info","service":"redis","message":"Redis 7.0.5 starting"}
+{"timestamp":"2024-12-03T10:00:01Z","level":"info","service":"redis","message":"Server initialized","port":6379}
+{"timestamp":"2024-12-03T10:01:00Z","level":"info","service":"redis","message":"Accepted connection from 192.168.1.100:45678"}
+{"timestamp":"2024-12-03T10:02:00Z","level":"warn","service":"redis","message":"Memory usage high","used_memory":"1.2GB","max_memory":"1.5GB"}
+{"timestamp":"2024-12-03T10:02:30Z","level":"error","service":"redis","message":"Out of memory","command":"SET","key":"session:user:12345"}
+{"timestamp":"2024-12-03T10:02:31Z","level":"error","service":"redis","message":"OOM command not allowed when used memory > maxmemory"}
+{"timestamp":"2024-12-03T10:02:32Z","level":"warn","service":"redis","message":"Evicting keys using LRU policy"}
+{"timestamp":"2024-12-03T10:02:35Z","level":"info","service":"redis","message":"Evicted 150 keys","freed_memory":"200MB"}
+{"timestamp":"2024-12-03T10:03:00Z","level":"info","service":"redis","message":"Memory usage normalized","used_memory":"1.0GB"}
