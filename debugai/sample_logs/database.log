@@ -1,0 +1,15 @@
+2024-12-03 10:00:00 INFO [db] PostgreSQL 15.2 starting up
+2024-12-03 10:00:01 INFO [db] Listening on port 5432
+2024-12-03 10:00:02 INFO [db] Database system is ready to accept connections
+2024-12-03 10:01:00 INFO [db] Connection accepted from 192.168.1.100
+2024-12-03 10:02:28 WARN [db] Query execution time exceeded threshold: 2340ms
+2024-12-03 10:02:29 WARN [db] High memory usage detected: 85% of available memory
+2024-12-03 10:02:55 ERROR [db] Too many connections: max_connections=100 reached
+2024-12-03 10:02:56 ERROR [db] Connection rejected from 192.168.1.100: connection limit exceeded
+2024-12-03 10:02:57 ERROR [db] Connection rejected from 192.168.1.101: connection limit exceeded
+2024-12-03 10:02:58 WARN [db] Connection pool at 100% capacity
+2024-12-03 10:03:00 ERROR [db] FATAL: remaining connection slots reserved for superuser
+2024-12-03 10:03:01 ERROR [db] Terminating connection due to timeout
+2024-12-03 10:03:30 INFO [db] Connection terminated: 192.168.1.100
+2024-12-03 10:03:45 INFO [db] Connection pool usage dropped to 75%
+2024-12-03 10:04:00 INFO [db] New connection accepted from 192.168.1.100
