@@ -89,8 +89,43 @@ class Settings:
             self._config_path = project_config
             self._merge_config(self._load_yaml(project_config))
         
+        # Load .env file (before env vars so explicit env vars take precedence)
+        self._load_dotenv()
+        
         # Override with environment variables
         self._load_env_vars()
+    
+    def _load_dotenv(self) -> None:
+        """Load environment variables from .env file if it exists."""
+        # Check current directory first, then parent directories
+        env_paths = [
+            Path.cwd() / ".env",
+            Path.cwd().parent / ".env",
+        ]
+        
+        for env_path in env_paths:
+            if env_path.exists():
+                try:
+                    with open(env_path, "r", encoding="utf-8") as f:
+                        for line in f:
+                            line = line.strip()
+                            # Skip empty lines and comments
+                            if not line or line.startswith("#"):
+                                continue
+                            # Parse KEY=value format
+                            if "=" in line:
+                                key, _, value = line.partition("=")
+                                key = key.strip()
+                                value = value.strip()
+                                # Remove quotes if present
+                                if value and value[0] in ('"', "'") and value[-1] == value[0]:
+                                    value = value[1:-1]
+                                # Only set if not already in environment
+                                if key and key not in os.environ:
+                                    os.environ[key] = value
+                    break  # Only load first .env found
+                except Exception:
+                    pass  # Silently ignore errors reading .env
     
     def _load_yaml(self, path: Path) -> Dict[str, Any]:
         """Load YAML config file."""

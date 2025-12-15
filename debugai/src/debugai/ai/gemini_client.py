@@ -15,13 +15,13 @@ class GeminiClient:
     Handles error analysis, explanations, and fix suggestions.
     """
     
-    def __init__(self, api_key: Optional[str] = None, model: str = "gemini-2.0-flash"):
+    def __init__(self, api_key: Optional[str] = None, model: str = "gemini-flash-latest"):
         """
         Initialize Gemini client.
         
         Args:
             api_key: Gemini API key (or set GEMINI_API_KEY env var)
-            model: Model to use (default: gemini-2.0-flash)
+            model: Model to use (default: gemini-flash-latest)
         """
         self.api_key = api_key or os.environ.get("GEMINI_API_KEY")
         self.model_name = model
