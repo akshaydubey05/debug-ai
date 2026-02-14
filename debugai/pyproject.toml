@@ -100,10 +100,12 @@ docs = [
 debugai = "debugai.cli.main:app"
 
 [project.urls]
-Homepage = "https://github.com/debugai/debugai"
-Documentation = "https://debugai.dev/docs"
-Repository = "https://github.com/debugai/debugai"
-Issues = "https://github.com/debugai/debugai/issues"
+Homepage = "https://github.com/akshaydubey05/debug-ai"
+Documentation = "https://akshaydubey05.github.io/debug-ai/"
+Repository = "https://github.com/akshaydubey05/debug-ai"
+Issues = "https://github.com/akshaydubey05/debug-ai/issues"
+Changelog = "https://github.com/akshaydubey05/debug-ai/blob/main/CHANGELOG.md"
+"Source Code" = "https://github.com/akshaydubey05/debug-ai"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/debugai"]
